@@ -22,4 +22,25 @@ Notes are stored locally in the current browser under the key `campusnotes-v1`. 
 - `app.js` — note CRUD, search, filtering and local storage
 
 ## Version control practice
+
 This project is used for the Version Control System assignment. Git operations and collaboration evidence should be captured from the student's own terminal and GitHub account.
+How to Use CampusNotes
+Open index.html in your browser.
+Click New Note to create a note.
+Enter the title, subject and content.
+Use the search bar to find specific notes.
+Filter notes by subject.
+Pin important notes for quick access.
+Edit or delete notes whenever required.
+
+Manual Testing Checklist
+Create a new note.
+Search for a note by title.
+Filter notes by subject.
+Pin and unpin a note.
+Edit an existing note.
+Delete a note.
+Refresh the browser and verify saved notes.
+
+Browser Compatibility
+Use a modern browser with JavaScript and Local Storage enabled.
