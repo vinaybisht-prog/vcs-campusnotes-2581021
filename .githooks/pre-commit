@@ -1,0 +1,10 @@
+#!/bin/sh
+# Reject staged additions containing TODO or FIXME markers.
+if git diff --cached --unified=0 --no-ext-diff | grep -E '^[+][^+].*(TODO|FIXME)' >/dev/null 2>&1; then
+  echo "ERROR: TODO or FIXME found in staged changes."
+  echo "Remove the marker before committing."
+  exit 1
+fi
+
+echo "Pre-commit check passed."
+exit 0

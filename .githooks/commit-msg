@@ -1,0 +1,18 @@
+#!/bin/sh
+# Require at least 10 characters and an approved Conventional Commit prefix.
+message=$(sed -n '1p' "$1")
+if [ "${#message}" -lt 10 ]; then
+  echo "ERROR: Commit message must be at least 10 characters."
+  exit 1
+fi
+
+case "$message" in
+  feat:*|fix:*|docs:*|refactor:*|chore:*)
+    echo "Commit message check passed."
+    exit 0
+    ;;
+  *)
+    echo "ERROR: Commit message must start with feat:, fix:, docs:, refactor:, or chore:."
+    exit 1
+    ;;
+esac

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CampusNotes helps students capture, organize, search and manage study notes in one place.">
+  <title>CampusNotes | Your study space</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CampusNotes home"><span class="brand-mark">C</span><span>CampusNotes</span></a>
+    <span class="topbar-note">A clearer space for learning</span>
+  </header>
+
+  <main class="layout" id="home">
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+      <h1>Ideas worth keeping.<br><span>Notes worth finding.</span></h1>
+      <p class="intro-copy">Capture lecture notes, keep useful resources close, and stay focused on what matters this semester.</p>
+      <div class="stats" aria-label="Notes summary">
+        <div><strong id="total-count">0</strong><span>Total notes</span></div>
+        <div><strong id="pinned-count">0</strong><span>Pinned</span></div>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Notes workspace">
+      <div class="workspace-head">
+        <div><p class="eyebrow">YOUR LIBRARY</p><h2>My notes</h2></div>
+        <button class="primary-btn" id="new-note-btn" type="button">＋ New note</button>
+      </div>
+
+      <div class="toolbar">
+        <label class="searchbox"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search your notes…" aria-label="Search notes"></label>
+        <select id="subject-filter" aria-label="Filter by subject"><option value="all">All subjects</option></select>
+        <select id="sort-select" aria-label="Sort notes"><option value="updated">Recently updated</option><option value="title">Title A–Z</option><option value="subject">Subject</option></select>
+      </div>
+
+      <div id="notes-grid" class="notes-grid" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state" hidden>No notes found. Create a note or change your search.</p>
+    </section>
+  </main>
+
+  <dialog id="note-dialog" class="note-dialog">
+    <form id="note-form" method="dialog">
+      <div class="dialog-head"><div><p class="eyebrow">NOTE EDITOR</p><h2 id="dialog-title">Create a note</h2></div><button type="button" class="icon-btn" id="close-dialog" aria-label="Close">×</button></div>
+      <input type="hidden" id="note-id">
+      <label>Title<input id="note-title" maxlength="90" required placeholder="e.g. Binary search"></label>
+      <div class="form-row"><label>Subject<input id="note-subject" maxlength="40" required placeholder="e.g. DSA"></label><label>Tag<input id="note-tag" maxlength="24" placeholder="e.g. Exam prep"></label></div>
+      <label>Content<textarea id="note-content" rows="7" required placeholder="Write your key points here…"></textarea></label>
+      <label class="pin-toggle"><input id="note-pinned" type="checkbox"> Pin this note</label>
+      <div class="dialog-actions"><button type="button" class="secondary-btn" id="cancel-dialog">Cancel</button><button type="submit" class="primary-btn">Save note</button></div>
+    </form>
+  </dialog>
+
+  <footer><span>CampusNotes</span><span>Made for curious minds · Your notes stay in this browser</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
