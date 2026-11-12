@@ -1,0 +1,6 @@
+CampusNotes Collaboration Test
+
+Student: Vinay Bisht
+URN: 2581021
+
+This file demonstrates remote repository collaboration.
